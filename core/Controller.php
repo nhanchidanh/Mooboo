@@ -36,6 +36,33 @@ class Controller
         exit("GET LAYOUT NOT FOUND!");
     }
 
+    public function getLayoutAdmin($nameLayout, $params = [])
+  {
+    if (file_exists(VIEW_LAYOUTS_PATH . "admin\\" . $nameLayout . '.php')) {
+      return require_once VIEW_LAYOUTS_PATH . "admin\\" . $nameLayout . '.php';
+    }
+
+    exit("GET LAYOUT NOT FOUND!");
+  }
+
+  public function getComponentAdmin($component, $nameLayout, $params = [])
+  {
+    if (file_exists(VIEW_COMPONENTS_PATH . "admin\\$component\\$nameLayout.php")) {
+      return require_once VIEW_COMPONENTS_PATH . "admin\\$component\\$nameLayout.php";
+    }
+
+    exit("GET COMPONENTS NOT FOUND!");
+  }
+
+  public function getPageAdmin($namePage, $params = [])
+  {
+    if (file_exists(VIEW_PAGES_PATH . "admin\\" . $namePage . '.php')) {
+      return require_once VIEW_PAGES_PATH . "admin\\" . $namePage . '.php';
+    }
+
+    exit("GET PAGE NOT FOUND!");
+  }
+
     public function getPage($namePage, $params = [])
     {
         if (file_exists(VIEW_PAGES_PATH . $namePage . '.php')) {
@@ -53,5 +80,44 @@ class Controller
     public function getJs($nameJs)
     {
         return PUBLIC_JS_PATH . $nameJs . '.Js';
+    }
+
+    public function method()
+    {
+        return strtolower($_SERVER['REQUEST_METHOD']);
+    }
+
+    public function isGet()
+    {
+        return $this->method() === 'get';
+    }
+
+    public function isPost()
+    {
+        return $this->method() === 'post';
+    }
+    public function getBody()
+    {
+        $body = [];
+
+        if ($this->method() === 'get') {
+            foreach ($_GET as $key => $value) {
+                $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        if ($this->method() === 'post') {
+            foreach ($_POST as $key => $value) {
+                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        return $body;
+    }
+
+    public function redirect($url = '')
+    {
+        if (!empty($url))
+            return header("Location: .$url");
     }
 }

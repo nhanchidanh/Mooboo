@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\Database;
+use app\core\db\Database;
 
 class HomeModel extends Database
 {
