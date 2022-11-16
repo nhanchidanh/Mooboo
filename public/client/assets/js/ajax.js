@@ -11,14 +11,21 @@ window.addEventListener('load', function () {
     product_list.forEach((item) => {
         item.addEventListener('click', function (e) {
             if (e.target.matches('.add-link i')) {
-                console.log(e.target)
-                let id = e.target.parentElement.dataset.id
-                console.log(id);
-                let number = 1
-                let url = e.target.parentElement.dataset.url
-                console.log(url)
-                let path_img = e.target.parentElement.dataset.path
-                addToCart(id, number, url, path_img, true)
+                let user = e.target.parentElement.dataset.user;
+                console.log(user)
+                if (+user <= 0) {
+                    alert('Ban phai dang nhap!')
+                } else {
+
+                    console.log(e.target)
+                    let id = e.target.parentElement.dataset.id
+                    console.log(id);
+                    let number = 1
+                    let url = e.target.parentElement.dataset.url
+                    console.log(url)
+                    let path_img = e.target.parentElement.dataset.path
+                    addToCart(id, number, url, path_img, true)
+                }
             }
         })
     })
@@ -36,19 +43,25 @@ window.addEventListener('load', function () {
             }
         })
     })
-let quantity = document.getElementById('quantity');
-btn_add_cart?.addEventListener('click', function (e) {
+    let quantity = document.getElementById('quantity');
+    btn_add_cart?.addEventListener('click', function (e) {
         e.preventDefault()
         // console.log(e.target);
         if (e.target.matches('.btn-add-cart')) {
-            let id = e.target.dataset.id
-            console.log(id);
-            let number = +quantity.value
-            let url = e.target.dataset.url
-            console.log(url);
-            let path_img = e.target.dataset.path
-            console.log(path_img);
-            addToCart(id, number, url, path_img, true)
+            let user = e.target.dataset.user;
+            console.log(user)
+            if (+user <= 0) {
+                alert('Ban phai dang nhap!')
+            } else {
+                let id = e.target.dataset.id
+                console.log(id);
+                let number = +quantity.value
+                let url = e.target.dataset.url
+                console.log(url);
+                let path_img = e.target.dataset.path
+                console.log(path_img);
+                addToCart(id, number, url, path_img, true)
+            }
         }
 
     })
@@ -145,6 +158,7 @@ btn_add_cart?.addEventListener('click', function (e) {
     });
     const cartItemRow = document.querySelectorAll('.item_cart');
     function addToCart(id, number, url, path_img, msg = false) {
+
         $.ajax({
             type: "POST",
             url: url + "/addCart",
@@ -216,10 +230,10 @@ btn_add_cart?.addEventListener('click', function (e) {
     increase = document.querySelectorAll('.increase')
     number = document.querySelectorAll('.number')
     const list_Cart = document.querySelector('.list_cart');
-    list_Cart?.addEventListener('click',function(e){
-        if(e.target.matches('.increase')){
+    list_Cart?.addEventListener('click', function (e) {
+        if (e.target.matches('.increase')) {
             let number = e.target.parentElement.previousElementSibling;
-            let numberCurrent = +number.textContent+1
+            let numberCurrent = +number.textContent + 1
             number.textContent = numberCurrent;
             let id = e.target.parentElement.dataset.id
             console.log(id);
@@ -229,13 +243,13 @@ btn_add_cart?.addEventListener('click', function (e) {
             console.log(path_img);
             addToCart(id, 1, url, path_img)
 
-        }   
-        if(e.target.matches('.decrease')){
+        }
+        if (e.target.matches('.decrease')) {
             let number = e.target.parentElement.nextElementSibling;
-            if(+number.textContent > 1){
-                let numberCurrent = +number.textContent-1
+            if (+number.textContent > 1) {
+                let numberCurrent = +number.textContent - 1
                 number.textContent = numberCurrent;
-            }else{
+            } else {
                 alert('Quantity must be than 1')
             }
             let id = e.target.parentElement.dataset.id
@@ -245,11 +259,11 @@ btn_add_cart?.addEventListener('click', function (e) {
             let path_img = e.target.parentElement.dataset.path
             console.log(path_img);
             addToCart(id, -1, url, path_img)
-       
+
         }
     })
-    
-    
+
+
 
     function renderItemCart(item, path_img, url) {
         let template = `<li class="cart_item" data-id="${item.id}">

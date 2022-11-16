@@ -79,7 +79,7 @@
                      </div>
                      <div class="btn-submit">
                         <button class="btn btn-buy" type="submit">BUY NOW</button>
-                        <button data-id="<?= $data['product']['id']?>" data-url="<?= _WEB_ROOT_PATH . '/ajax'?>" data-path="<?= _IMG_PRODUCT_PATH ?>" class="btn btn-add-cart" type="submit">ADD TO CART</button>
+                        <button data-user="<?php echo  isset($_SESSION['user']) ? $_SESSION['user']['id']: 0 ?>" data-id="<?= $data['product']['id']?>" data-url="<?= _WEB_ROOT_PATH . '/ajax'?>" data-path="<?= _IMG_PRODUCT_PATH ?>" class="btn btn-add-cart" type="submit">ADD TO CART</button>
                      </div>
                   </form>
                   <div class="product_desc">

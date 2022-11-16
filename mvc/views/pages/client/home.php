@@ -129,7 +129,7 @@
                               </a>
                               <div>
                                  <div class="product_add">
-                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $data['new_product'][$i]['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link">
+                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $data['new_product'][$i]['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link" data-user="<?php  echo isset($_SESSION['user']) ?$_SESSION['user']['id'] :0 ?>">
                                        <i class="fa-solid fa-cart-plus"></i>
                                     </span>
                                  </div>
@@ -159,7 +159,7 @@
                               </a>
                               <div>
                                  <div class="product_add">
-                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $data['new_product'][$i]['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link">
+                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $data['new_product'][$i]['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link" data-user="<?php echo isset($_SESSION['user']) ? $_SESSION['user']['id']:0 ?>">
                                        <i class="fa-solid fa-cart-plus"></i>
                                     </span>
                                  </div>
@@ -227,7 +227,7 @@
                               </a>
                               <div>
                                  <div class="product_add">
-                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $trend_product['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link">
+                                    <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $trend_product['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link" data-user="<?php echo  isset($_SESSION['user']) ? $_SESSION['user']['id']: 0 ?>">
                                        <i class="fa-solid fa-cart-plus"></i>
                                     </span>
                                  </div>

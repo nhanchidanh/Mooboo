@@ -80,7 +80,7 @@
                                  </a>
                                  <div>
                                     <div class="product_add">
-                                       <span data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $product['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link">
+                                       <span data-user="<?php echo  isset($_SESSION['user']) ? $_SESSION['user']['id']: 0 ?>" data-path="<?= _IMG_PRODUCT_PATH ?>" data-id="<?= $product['id'] ?>" data-url="<?= _WEB_ROOT_PATH . '/ajax' ?>" class="add-link">
                                           <i class="fa-solid fa-cart-plus"></i>
                                        </span>
                                     </div>
