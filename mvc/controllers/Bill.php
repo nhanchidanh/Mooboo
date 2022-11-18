@@ -8,15 +8,15 @@ class Bill extends Controller
     }
     public function index()
     {
-        $status = '';
+        $status = -1;
         if (isset($_GET['type'])) {
             $status = $_GET['type'];
         }
-        // $categories = $this->categories->getAllCl();
+        $user_id = 0;
         if(isset($_SESSION['user'])){
             $user_id = $_SESSION['user']['id'];
         }
-        $getAllBill = $this->bills->getAllBill($status, $user_id);
+        $getAllBill = $this->bills->getAllBill($status, $user_id, '');
         $billNew = [];
         foreach ($getAllBill as $bill) {
             $bill['detail'] = $this->bills->getDetailBill($bill['id']);

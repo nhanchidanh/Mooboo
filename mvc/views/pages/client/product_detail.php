@@ -19,7 +19,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-5">
-               <div class="product-details-img rounded-lg img-thumbnail shadow-sm">
+               <div class="product-details-img rounded-lg img-thumbnail shadow-sm" data-aos="fade-right">
                   <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
                      <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -58,9 +58,9 @@
                </div>
             </div>
             <div class="col-md-7">
-               <div class="product-content">
+               <div class="product-content" data-aos="fade-left">
                   <form action="" method="post" class="product-content-form">
-                     <h1 class="product-title"><?= $data['product']['name'] ?></h1>
+                     <h1 class="product-title mt-5"><?= $data['product']['name'] ?></h1>
                      <div class="rating-box">
                         <span class="rating-star mb-3">
                            <i class="fa-solid fa-star"></i>
@@ -95,7 +95,7 @@
                </div>
             </div>
          </div>
-         <div class="product-area owl-carousel owl-theme" id="owl">
+         <div class="product-area owl-carousel owl-theme" id="owl" data-aos="fade-left">
             <?php
             if (!empty($data['related_products'])) {
                foreach ($data['related_products'] as  $related_product) {

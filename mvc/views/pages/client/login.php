@@ -55,7 +55,7 @@
                               <a href="#" class="forget_pass">Forgot your password</a>
                            </div>
                            <div class="account-option">
-                              <a href="<?= _WEB_ROOT_PATH . '/Auth/register' ?>" class="create_acc">Create account</a>
+                              <a href="<?= _WEB_ROOT_PATH . '/auth/register' ?>" class="create_acc">Create account</a>
                            </div>
                         </div>
                      </div>

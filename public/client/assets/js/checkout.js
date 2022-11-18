@@ -42,31 +42,6 @@ window.addEventListener('load', function () {
             form_vn_pay.submit();
         }
 
-
-        // $.ajax({
-        //     type: "POST",
-        //     url: formPayment.getAttribute('action'),
-        //     data: {
-        //         method: "Vn_pay",
-        //         fullname,
-        //         email,
-        //         phone,
-        //         address,
-        //         note,
-        //         total,
-        //         add_bill: 'add_bill'
-        //     },
-        //     dataType: "text",
-        //     success: function (data) {
-        //         form_vn_pay.submit();
-
-        //         console.log(data);
-
-        //     },
-        //     error: function (e) {
-        //         console.log(e);
-        //     },
-        // });
     })
 
     const success_vnpay = document.querySelector('.success_vnpay');

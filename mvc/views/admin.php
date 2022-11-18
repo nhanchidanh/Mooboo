@@ -116,31 +116,31 @@ if((int)$_SESSION['user']['gr_id'] != 1){
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo _WEB_ROOT_PATH . '/Group' ?>" class="nav-link <?php if($data['page'] == 'groups/list') echo 'active' ?>">
+            <a href="<?php echo _WEB_ROOT_PATH . '/group' ?>" class="nav-link <?php if($data['page'] == 'groups/list') echo 'active' ?>">
               <i class="fas fa-users nav-icon"></i>
               <p>User Group</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo _WEB_ROOT_PATH . '/User' ?>" class="nav-link <?php if($data['page'] == 'users/list') echo 'active' ?>">
+            <a href="<?php echo _WEB_ROOT_PATH . '/user' ?>" class="nav-link <?php if($data['page'] == 'users/list') echo 'active' ?>">
               <i class="fas fa-user nav-icon"></i>
               <p> Users</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo _WEB_ROOT_PATH . '/Category' ?>" class="nav-link <?php if($data['page'] == 'category/list') echo 'active' ?>">
+            <a href="<?php echo _WEB_ROOT_PATH . '/category' ?>" class="nav-link <?php if($data['page'] == 'category/list') echo 'active' ?>">
               <i class="fab fa-elementor nav-icon"></i>
               <p>Category</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo _WEB_ROOT_PATH . '/Product' ?>" class="nav-link <?php if($data['page'] == 'product/list') echo 'active' ?>">
+            <a href="<?php echo _WEB_ROOT_PATH . '/product' ?>" class="nav-link <?php if($data['page'] == 'product/list') echo 'active' ?>">
             <i class="fas fa-boxes  nav-icon"></i>
               <p>Product</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo _WEB_ROOT_PATH . '/Bill/show_bill' ?>" class="nav-link <?php if($data['page'] == 'bill/list') echo 'active' ?>">
+            <a href="<?php echo _WEB_ROOT_PATH . '/bill/show_bill' ?>" class="nav-link <?php if($data['page'] == 'bill/list') echo 'active' ?>">
             <i class="fas fa-tasks nav-icon"></i>
               <p>Bill</p>
             </a>

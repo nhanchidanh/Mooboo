@@ -111,18 +111,7 @@ window.addEventListener('load', function () {
                     })
                 })
                 e.target.parentElement.parentElement.parentElement.remove();
-                // } else {
-                //     e.target.parentElement.parentElement.remove();
-
-                // }
-                // if (response.length <= 0) {
-                //     cartFooter.classList.add('hidden');
-                //     cartEmpty.classList.remove('hidden');
-                // }
-                // else {
-                //     cartFooter.classList.remove('hidden');
-                //     cartEmpty.classList.add('hidden');
-                // }
+     
                 let cart_notice = document.querySelectorAll('.cart-notice')
                 let sum = 0;
                 let totalLength = 0;
@@ -130,18 +119,11 @@ window.addEventListener('load', function () {
                     sum += +item.total;
                     totalLength += +item.number;
                 });
-                // cartItems.forEach(item => {
-                //     if (+item.dataset.id == id) {
-                //         item.remove()
-                //     }
-                // })
+
                 cart_total_price.forEach((item) => {
                     item.textContent = formatter.format(sum);
                 })
-                // if (cartTotalPrice) {
 
-                //     cartTotalPrice.textContent = formatter.format(sum);
-                // }
                 cart_notice.forEach((item) => {
                     item.textContent = totalLength;
                 })
@@ -166,10 +148,7 @@ window.addEventListener('load', function () {
             dataType: "text",
             success: function (data) {
                 let response = JSON.parse(data);
-                // console.log(response);
-                // cartContent.innerHTML = "";
-                // cartFooter.classList.remove('hidden');
-                // cartEmpty.classList.add('hidden');
+
                 let sum = 0;
                 let totalLength = 0;
                 let cart_notice = document.querySelectorAll('.cart-notice')
@@ -205,11 +184,6 @@ window.addEventListener('load', function () {
                     item.textContent = formatter.format(sum);
 
                 })
-                // if (cartTotalPrice) {
-
-                //     cartTotalPrice.textContent = formatter.format(sum);
-                // }
-
 
                 if (msg) {
                     Swal.fire({
