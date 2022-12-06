@@ -92,7 +92,7 @@
 
                               <div class="product_content text-left">
                                  <h3 class="product_name">
-                                    <a href="product-detail.html"><?= $product['name'] ?></a>
+                                    <a href="<?= _WEB_ROOT_PATH . '/product_detail/product/' . $product['id'] ?>"><?= $product['name'] ?></a>
                                  </h3>
                                  <div class="price-box">
                                     <span class="current-price"><?= format_money($product['price']) ?></span>

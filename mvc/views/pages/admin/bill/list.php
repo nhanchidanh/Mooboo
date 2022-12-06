@@ -3,7 +3,7 @@
     <form class="form_bill form-inline " action="" method="POST">
         <div class="">
             <select name="status" id="bill" class="custom-select select-status" required>
-                <option selected value="-1">Select....</option>
+                <option selected ="selected" value="-1">Select....</option>
                 <option value="0">Processing</option>
                 <option value="1">In transit</option>
                 <option value="2">Delivered</option>

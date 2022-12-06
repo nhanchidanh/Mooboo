@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
                 let user = e.target.parentElement.dataset.user;
                 console.log(user)
                 if (+user <= 0) {
-                    alert('Ban phai dang nhap!')
+                    alert('Please login to continue!')
                 } else {
 
                     console.log(e.target)
@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
             let user = e.target.dataset.user;
             console.log(user)
             if (+user <= 0) {
-                alert('Ban phai dang nhap!')
+                alert('Please login to continue!')
             } else {
                 let id = e.target.dataset.id
                 console.log(id);
@@ -224,7 +224,8 @@ window.addEventListener('load', function () {
                 let numberCurrent = +number.textContent - 1
                 number.textContent = numberCurrent;
             } else {
-                alert('Quantity must be than 1')
+                alert('Quantity must be than 0')
+                return
             }
             let id = e.target.parentElement.dataset.id
             console.log(id);
