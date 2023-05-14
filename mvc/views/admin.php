@@ -85,7 +85,7 @@ if((int)$_SESSION['user']['gr_id'] != 1){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="https://scontent.fvca1-4.fna.fbcdn.net/v/t1.6435-9/155147441_1369547943399374_4588237912388724975_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hcUyvgwQPFsAX_C6BaB&_nc_ht=scontent.fvca1-4.fna&oh=00_AfDS8rxKV0TbwRsLNKjF4toHoHhWOejxdegGTlTdaGNXhA&oe=638BD7FD" class="img-circle elevation-2" alt="User Image">
+          <img src="https://png.pngtree.com/png-vector/20190629/ourmid/pngtree-office-work-user-icon-avatar-png-image_1527655.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Admin</a>
